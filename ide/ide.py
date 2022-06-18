@@ -86,15 +86,7 @@ def console():
         locate=r"C:/Users/" + user + "/AppData/Local/Programs/Python/Python39/python.exe"
         os.startfile(locate)
     except (FileNotFoundError, OSError):
-        install_python=askokcancel("Install Python Interpreter", "Do you want to install python Interpreter?")
-        if install_python:
-            try:
-                os.startfile("python-3.9.0-amd64.exe")
-                pass
-            except (FileNotFoundError, OSError):
-                raise PythonInterpreterNotFoundError
-        else:
-            raise PythonInterpreterNotFoundError
+        raise PythonInterpreterNotFoundError
         exit(0)
 
 def button_set():
